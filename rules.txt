@@ -1,0 +1,2 @@
+1. Has to be able to complete the game without the use of automation upgrades.
+2. Has to be able to automate every feature, to 100% the game.

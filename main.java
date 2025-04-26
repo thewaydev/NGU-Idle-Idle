@@ -9,7 +9,7 @@ class main{
 
     script scriptRun = new script();
 
-    scriptRun.runScript(1);
+    scriptRun.runScript(1000);
         
     }
 
