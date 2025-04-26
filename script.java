@@ -13,29 +13,44 @@ public class script{
 
     public void runScript(int waitTime) throws InterruptedException {
 
-        //Object declaration.
 
-        skillOneCap skillOneCapObj = new skillOneCap();
-        skillTwoCap skillTwoCapObj = new skillTwoCap();
-        nukeBoss nukeBossObj = new nukeBoss();
-        fightBoss fightBossObj = new fightBoss();
+        try {
+            GlobalScreen.registerNativeHook();
+        }
+        catch (NativeHookException ex) {
+            System.err.println("There was a problem registering the native hook.");
+            System.err.println(ex.getMessage());
 
-        //The script itself.
+            System.exit(1);
+        }
 
-        skillOneCapObj.skillOneCapAct();
+        GlobalScreen.addNativeKeyListener(new EmergencyExit());
 
-        Thread.sleep(waitTime);
 
-        skillTwoCapObj.skillTwoCapAct();
+        while(true) {
+            skillOneCap skillOneCapObj = new skillOneCap();
+            skillTwoCap skillTwoCapObj = new skillTwoCap();
+            nukeBoss nukeBossObj = new nukeBoss();
+            fightBoss fightBossObj = new fightBoss();
 
-        Thread.sleep(waitTime);
+            //The script itself.
 
-        nukeBossObj.nukeBossAct();
+            skillOneCapObj.skillOneCapAct();
 
-        Thread.sleep(waitTime / 2);
+            Thread.sleep(waitTime);
 
-        fightBossObj.fightBossAct();        
+            skillTwoCapObj.skillTwoCapAct();
 
+            Thread.sleep(waitTime);
+
+            nukeBossObj.nukeBossAct();
+
+            Thread.sleep(waitTime / 2);
+
+            fightBossObj.fightBossAct();
+
+        }
     }
+
 
 }

@@ -3,14 +3,14 @@ class main{
 
     public static void main(String[] args) throws InterruptedException {
 
-    //dualBasicCap test = new dualBasicCap();
+        //dualBasicCap test = new dualBasicCap();
 
-    //test.capBasic();
+        //test.capBasic();
 
-    script scriptRun = new script();
+        script scriptRun = new script();
 
-    scriptRun.runScript(1000);
-        
+        scriptRun.runScript(1000);
+
+
     }
-
 }
